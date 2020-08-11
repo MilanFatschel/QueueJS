@@ -5,14 +5,17 @@ class Node {
     }
 }
 
-class Queue {
+class LinkedListQueue {
     constructor() {
         this._head = null;
         this._tail = null;
         this._size = 0;
     }
     
-    peek(val) {
+    peek() {
+        if(this._size === 0) {
+            return null;
+        }
         return this._head.data;
     }
     
@@ -42,6 +45,10 @@ class Queue {
             this._head = this._head.next;
         }
         
-        return tmp;
+        return tmp.data;
+    }
+    
+    size() {
+        return this._size;
     }
 }
